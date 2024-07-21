@@ -5,7 +5,11 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import "./tailwind.css";
+import '@shopify/polaris/build/esm/styles.css';
+
+import enTranslations from '@shopify/polaris/locales/en.json';
+import {AppProvider, Page} from '@shopify/polaris';
+import TitleBar from "./components/TitleBar";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -26,5 +30,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <div>
+      <AppProvider i18n={enTranslations}>
+        <Page>
+          <TitleBar title="Privacy Policy"/>
+          <Outlet />
+        </Page>
+      </AppProvider>
+    </div>
+  );
 }
