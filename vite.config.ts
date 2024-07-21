@@ -6,7 +6,7 @@ export default defineConfig({
   base: "/",
   plugins: [
     remix({
-      basename: "/theshoptools/",
+      basename: "/",
       ssr: false,
       future: {
         v3_fetcherPersist: true,
