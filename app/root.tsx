@@ -10,7 +10,6 @@ import '@shopify/polaris/build/esm/styles.css';
 import enTranslations from '@shopify/polaris/locales/en.json';
 import {AppProvider, Page} from '@shopify/polaris';
 import TitleBar from "./components/TitleBar";
-import PrivacyPolicy from "./routes/legal.privacy-policy";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -35,8 +34,7 @@ export default function App() {
     <div>
       <AppProvider i18n={enTranslations}>
         <Page>
-          <TitleBar title="Privacy Policy"/>
-          <PrivacyPolicy />
+          <TitleBar title="theshoptools"/>
           <Outlet />
         </Page>
       </AppProvider>
